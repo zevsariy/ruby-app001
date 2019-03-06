@@ -1,0 +1,16 @@
+<%= form_tag search_students_path(), method: :get do %>
+<%= text_field_tag 'search[ln]', params['search']['ln'] %>
+<%= text_field_tag 'search[name]', params['search']['name'] %>
+<%= submit_tag 'Искать' %>
+<% end %>
+
+<% @students.each do |s| %>
+<%= s.ln %>
+<br/>
+<%= s.fn %>
+<br/>
+<%= s.sn %>
+<br/>
+<%= s.group.name %>
+<br/>
+<% end %>

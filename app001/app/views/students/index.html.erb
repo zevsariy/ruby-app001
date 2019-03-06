@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Студенты</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Фамилия</th>
+      <th>Имя</th>
+      <th>Отчество</th>
+      <th>Группа</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.ln %></td>
+        <td><%= student.fn %></td>
+        <td><%= student.sn %></td>
+        <td><%= student.group.name %></td>
+        <td><%= link_to 'Просмотр', student %></td>
+        <td><%= link_to 'Редактирование', edit_student_path(student) %></td>
+        <td><%= link_to 'Убить!', student, method: :delete, data: { confirm: 'Серьезно?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить нового студента', new_student_path %>

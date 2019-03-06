@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Фамилия:</strong>
+  <%= @student.ln %>
+</p>
+
+<p>
+  <strong>Имя:</strong>
+  <%= @student.fn %>
+</p>
+
+<p>
+  <strong>Отчество:</strong>
+  <%= @student.sn %>
+</p>
+
+<p>
+  <strong>Группа:</strong>
+  <%= @student.group.id %>
+</p>
+
+<%= link_to 'Редактировать', edit_student_path(@student) %> |
+<%= link_to 'Вернуться назад', students_path %>
